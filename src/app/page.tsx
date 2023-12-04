@@ -17,7 +17,9 @@ import {
 } from '@tldraw/tldraw'
 import { useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
+
 import { LiveImageTool, MakeLiveButton } from '../components/LiveImageTool'
+import Webcam from '../components/webcam'
 
 fal.config({
 	requestMiddleware: fal.withProxy({
@@ -89,6 +91,7 @@ export default function Home() {
 		<LiveImageProvider appId="110602490-lcm-sd15-i2i">
 			<main className="flex min-h-screen flex-col items-center justify-between">
 				<div className="fixed inset-0">
+					<Webcam /> {/* Add Webcam component here */}
 					<Tldraw
 						persistenceKey="tldraw-fal"
 						onMount={onEditorMount}
